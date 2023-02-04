@@ -4,14 +4,18 @@
 # Licensed under The MIT License [see LICENSE for details]
 # Written by Ross Girshick
 # --------------------------------------------------------
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+import torch
+from model.utils.config import cfg
+if torch.cuda.is_available():
+    from model.nms.nms_gpu import nms_gpu
+from model.nms.nms_cpu import nms_cpu
 
-from nms.pth_nms import pth_nms
+def nms(dets, thresh, force_cpu=False):
+    """Dispatch to either CPU or GPU NMS implementations."""
+    if dets.shape[0] == 0:
+        return []
+    # ---numpy version---
+    # original: return gpu_nms(dets, thresh, device_id=cfg.GPU_ID)
+    # ---pytorch version---
 
-
-def nms(dets, thresh):
-  """Dispatch to either CPU or GPU NMS implementations.
-  Accept dets as tensor"""
-  return pth_nms(dets, thresh)
+    return nms_gpu(dets, thresh) if force_cpu == False else nms_cpu(dets, thresh)
