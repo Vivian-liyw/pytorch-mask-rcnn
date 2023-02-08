@@ -47,7 +47,7 @@ import shutil
 
 from config import Config
 import utils
-import model as modellib
+import model_maskrcnn as modellib
 
 import torch
 

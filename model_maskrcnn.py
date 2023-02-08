@@ -23,7 +23,7 @@ from torch.autograd import Variable
 
 import utils
 import visualize
-from nms.nms_wrapper import nms
+from nms.model.layer import nms
 from roialign.roi_align.crop_and_resize import CropAndResizeFunction
 
 

@@ -1,0 +1,10 @@
+setup.py
+/home/liy70/Desktop/vivian_test/pytorch-mask-rcnn/nms/model/csrc/vision.cpp
+/home/liy70/Desktop/vivian_test/pytorch-mask-rcnn/nms/model/csrc/cpu/nms_cpu.cpp
+model/__init__.py
+model/layer/__init__.py
+model/layer/nms.py
+nms.egg-info/PKG-INFO
+nms.egg-info/SOURCES.txt
+nms.egg-info/dependency_links.txt
+nms.egg-info/top_level.txt

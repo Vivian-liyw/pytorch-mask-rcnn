@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 import coco
 import utils
-import model as modellib
+import model_maskrcnn as modellib
 import visualize
 
 import torch
